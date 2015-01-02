@@ -1,0 +1,94 @@
+body {
+	margin: 0 auto;	
+	max-width: 100%;
+}
+
+h2, h3, p {
+	text-align: center;	
+}
+
+.fixedwidth {
+	width: 150px;	
+}
+
+#allUserDates {
+	margin: 0 auto;	
+	
+}
+
+#empty_form {
+	margin: 0 auto;
+	float: none;
+	padding: 20px 0 0 0;
+}
+
+.user:nth-child(odd) {
+	background-color: #CCC;
+}
+
+.userLine, .dateLine {
+	margin: 0 auto;	
+	width: 100%;
+}
+
+#userline, #dateline{
+	margin: 0 auto;
+	display: inline-block;
+	padding: 5px 10px;	
+}
+
+.dateLine:nth-child(even) {
+	background-color: #CCC;	
+}
+
+.dates {
+	margin: 0 auto;
+	padding: 0 20px 0 0;
+	display: inline-block;	
+}
+
+#trainingInputForm {
+	margin: 0 auto;
+	padding: 5px;	
+}
+
+.user {
+	display: inline;
+	width: 100%;	
+}
+
+exercises {
+	margin: 0 auto;	
+	width: 100%;
+}
+
+.exercise {
+	margin: 0 auto;
+	display: inline;
+	width: 100%;
+	padding: 0 10px;	
+}
+
+#navbar {
+}
+
+#main-navi {
+	list-style: none;
+	text-align: center;
+	width: 100%;
+}
+
+#main-navi li {
+	display: inline-block;	
+	padding: 5px 10px;
+}
+
+
+#footer {
+	width: 100%;
+	height: 70px;
+	border-top: 1px solid #cecece;
+	text-align: center;
+	margin-top: 20px;
+}
+
