@@ -1,17 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Training calendar</title>
-<link rel="stylesheet" type="text/css" href="styles/style.css" />
-<link rel="stylesheet" type="text/css" href="styles/bootstrap-3.1.1-dist/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="scripts/bootstrap-select-master/bootstrap-select.min.css"></script>
-<script language="javascript" type="text/javascript" src="scripts/jquery-2.1.1.min.js"></script>
-<script language="javascript" type="text/javascript" src="scripts/showDates.js"></script>
-<script language="javascript" type="text/javascript" src="scripts/bootstrap-select-master/bootstrap-select.min.js"></script>
-
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<?php 
+	$title = "Training tracker";
+	include_once("head.php");
+?>
 
 
 <script type="text/javascript">
@@ -20,25 +10,26 @@
 	});
 </script>
 
-
 </head>
 
 <body>
 <?php 
-require_once("dbinit.php"); 
+require_once("dbinit.php");
 include_once("navbar.php");
+include_once("functions.php"); 
 ?>
 
 <h2>Haedong Kumdo Jyväskylä Training Tracker</h2>
 
 <div class="container">
 
-<?php include_once("latestInput.php"); ?>
+<!--?php latestInput($db); ?-->
 
 <h3>Add exercise with multiple users at once</h3>
 
 <div class="container">
 <!-- add multiple at once -->
+<div class="exerciseSetter">
 	<form method="POST" action="saveMultipleToDB.php" class="form-inline" role="form">
 			<div class="form-group">
 				<label for="inputDate">Date:</label>
@@ -72,18 +63,22 @@ SQLEND;
 				</div>
     	</div>
 		</form>
-
-
 </div>
 
-<!-- LIST EXERCISES -->
-<?php include_once("listParticipants.php"); ?>
+	<h4>Recent exercises</h4>
+	<?php listExercises($db, true); ?>
+</div>
 
+<!-- LIST RECENT EXERCISES -->
+<!--?php include_once("listParticipants.php"); ?-->
+<!--?php recentExercises($db); ?-->
+
+ 
 
 <!-- ADD ONE USER AT A TIME -->
-<h3 id="addusersclick"><a href="#">Add one user at a time</a></h3>
+<!--h3 id="addusersclick"><a href="#">Add one user at a time</a></h3>
 <input type="button" class="showDates" value="Show all dates" id="allUserDates" />
-<?php
+<!--?php
 // add one at a time
 
 $sql = <<<SQLEND
@@ -145,7 +140,7 @@ SQLEND;
 
 ?>
 
-</div>
+</div-->
 
 <?php include_once("footer.php"); ?>
 

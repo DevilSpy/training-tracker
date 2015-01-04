@@ -3,7 +3,9 @@ body {
 	max-width: 100%;
 }
 
-h2, h3, p {
+
+
+h2, h3, h4, p {
 	text-align: center;	
 }
 
@@ -11,10 +13,19 @@ h2, h3, p {
 	width: 150px;	
 }
 
-#allUserDates {
+
+/* FRONT PAGE */
+.exerciseSetter {
+	max-width: 720px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+
+/*#allUserDates {
 	margin: 0 auto;	
 	
-}
+}*/
 
 #empty_form {
 	margin: 0 auto;
@@ -22,7 +33,7 @@ h2, h3, p {
 	padding: 20px 0 0 0;
 }
 
-.user:nth-child(odd) {
+/*.user:nth-child(odd) {
 	background-color: #CCC;
 }
 
@@ -45,21 +56,22 @@ h2, h3, p {
 	margin: 0 auto;
 	padding: 0 20px 0 0;
 	display: inline-block;	
-}
+}*/
 
 #trainingInputForm {
 	margin: 0 auto;
 	padding: 5px;	
 }
 
-.user {
+/*.user {
 	display: inline;
 	width: 100%;	
 }
-
+*/
 exercises {
 	margin: 0 auto;	
 	width: 100%;
+	text-align: center;
 }
 
 .exercise {
@@ -92,3 +104,68 @@ exercises {
 	margin-top: 20px;
 }
 
+/* USERS TABLE / EXERCISES TABLE */
+.usersTable, .exercisesTable {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.usersTable, .usersTable th, .usersTable td, .exercisesTable, .exercisesTable th, .exercisesTable td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.usersTable th, .usersTable td, .exercisesTable th, .exercisesTable td {
+	padding: 8px;
+}
+
+/* LOADING ICON */
+#loadingIcon {
+	margin: 60px auto;
+	width: 50px;
+	height: 50px;
+	border: 8px solid #000;
+	border-right-color: #7CB5EC;
+	border-radius: 50%;
+	box-shadow: 0 0 25px 2px #7CB5EC;
+}
+
+#loadingIcon {
+	-webkit-animation: spin 1s linear infinite;
+	-moz-animation: spin 1s linear infinite;
+	-ms-animation: spin 1s linear infinite;
+	-o-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+
+}
+
+
+@-webkit-keyframes spin {
+	from { -webkit-transform: rotate(0deg); opacity: 0.4; }
+	50% { -webkit-transform: rotate(180deg); opacity: 1.0; }
+	to { -webkit-transform: rotate(360deg); opacity: 0.4; }
+}
+
+@-moz-keyframes spin {
+	from { -moz-transform: rotate(0deg); opacity: 0.4; }
+	50% { -moz-transform: rotate(180deg); opacity: 1.0; }
+	to { -moz-transform: rotate(360deg); opacity: 0.4; }
+}
+
+@-ms-keyframes spin {
+	from { -ms-transform: rotate(0deg); opacity: 0.4; }
+	50% { -ms-transform: rotate(180deg); opacity: 1.0; }
+	to { -ms-transform: rotate(360deg); opacity: 0.4; }
+}
+
+@-o-keyframes spin {
+	from { -o-transform: rotate(0deg); opacity: 0.4; }
+	50% { -o-transform: rotate(180deg); opacity: 1.0; }
+	to { -o-transform: rotate(360deg); opacity: 0.4; }
+}
+
+@keyframes spin {
+	from { transform: rotate(0deg); opacity: 0.4; }
+	50% { transform: rotate(180deg); opacity: 1.0; }
+	to { transform: rotate(360deg); opacity: 0.4; }
+}
