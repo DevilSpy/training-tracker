@@ -91,7 +91,7 @@ include_once("navbar.php");
 
 if(isset($_POST['submit_form'])) {
 
-	$stmt = $db->prepare("INSERT INTO users(firstname, lastname, email, number, address, city, postal, belt) VALUES (:fname, :lname, :email, :number, :address, :city, :postal, :belt)");
+	$stmt = $db->prepare("INSERT INTO users(firstname, lastname, email, number, address, city, postal, belt, level, active) VALUES (:fname, :lname, :email, :number, :address, :city, :postal, :belt, :level, :active)");
 	$stmt->bindParam(':fname', $fname);
         $stmt->bindParam(':lname', $lname);
         $stmt->bindParam(':email', $email);
@@ -100,6 +100,8 @@ if(isset($_POST['submit_form'])) {
         $stmt->bindParam(':city', $city);
         $stmt->bindParam(':postal', $postal);
         $stmt->bindParam(':belt', $belt);
+        $stmt->bindParam(':level', $level);
+        $stmt->bindParam(':active', $active);
 
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
@@ -109,6 +111,8 @@ if(isset($_POST['submit_form'])) {
         $city = $_POST['city'];
         $postal = $_POST['postal'];
         $belt = $_POST['belt'];
+        $level = 3; // basic user
+        $active = 1; // is active user
 
 	$stmt->execute();
 

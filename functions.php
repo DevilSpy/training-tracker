@@ -283,18 +283,28 @@
 				$date = $year . "-" . $i . "-%";
 			}
 
-			$sql = "SELECT SUM(hours) AS hours FROM exercise WHERE userid=:userid AND date LIKE :date";
-			$stmt = $db->prepare($sql);
-			$stmt->bindParam(':userid', $id);
-			$stmt->bindParam(':date', $date);
-			$stmt->execute();
+			// don't show the first logged bulk hours
+			if($date == "2014-07-%") {
 
-
-			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-				$hours = $row['hours'];
+				$hours = null;
 				array_push($yearArray, floatval($hours));
-			}
 
+
+			} else {	
+		
+				$sql = "SELECT SUM(hours) AS hours FROM exercise WHERE userid=:userid AND date LIKE :date";
+				$stmt = $db->prepare($sql);
+				$stmt->bindParam(':userid', $id);
+				$stmt->bindParam(':date', $date);
+				$stmt->execute();
+
+
+				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+					$hours = $row['hours'];
+					array_push($yearArray, floatval($hours));
+				}
+
+			}
 		}
 
 
