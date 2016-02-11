@@ -36,11 +36,14 @@
                 var id = <?php echo $id; ?>;
                 var year2014 = "2014";
                 var year2015 = "2015";
+                var year2016 = "2016";
                 var name = <?php echo "'" . $user->name . "'"; ?>;
                 var request2014 = new XMLHttpRequest();
                 var request2015 = new XMLHttpRequest();
+                var request2016 = new XMLHttpRequest();
                 var data2014;
                 var data2015;
+                var data2016;
                 
                 request2014.onload = function() {
                     data2014 = jQuery.parseJSON(this.responseText);
@@ -53,6 +56,12 @@
                 };
                 request2015.open("get", "getData.php?id=" + id + "&year=" + year2015, true);
                 request2015.send();
+
+                request2016.onload = function() {
+                    data2016 = jQuery.parseJSON(this.responseText);
+                }
+                request2016.open("get", "getData.php?id=" + id + "&year=" + year2016, true);
+                request2016.send();
 
                 setTimeout(function() { 
 
@@ -112,6 +121,10 @@
                             {
                                 name: "2015",
                                 data: data2015
+                            },
+                            {
+                                name: "2016",
+                                data: data2016
                             }]
                         });
                     });
